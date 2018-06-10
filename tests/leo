@@ -1,0 +1,414 @@
+/*
+** EPITECH PROJECT, 2017
+** put
+** File description:
+** char
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+void    redirect_all_stdp(void)
+{
+	cr_redirect_stdout();
+	cr_redirect_stderr();
+}
+
+Test(put_putchar1, test_putchar1, .init = redirect_all_stdp)
+{
+	my_putchar('4');
+	cr_assert_stdout_eq_str("4");
+}
+
+Test(put_putchar2, test_putchar2, .init = redirect_all_stdp)
+{
+	my_putchar('A');
+	cr_assert_stdout_eq_str("A");
+}
+
+Test(put_putchar3, test_putchar3, .init = redirect_all_stdp)
+{
+	my_putchar('a');
+	cr_assert_stdout_eq_str("a");
+}
+
+Test(put_putchar4, test_putchar4, .init = redirect_all_stdp)
+{
+	my_putchar('-');
+	cr_assert_stdout_eq_str("-");
+}
+/*
+** EPITECH PROJECT, 2017
+** tests_add_it
+** File description:
+** tests_add_it
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+void	redirect_all_std2(void)
+{
+	cr_redirect_stdout();
+	cr_redirect_stderr();
+}
+
+Test(put_nbr_bin1, test_put_nbr_binary1, .init = redirect_all_std2)
+{
+	my_put_nbr_bin(10);
+	cr_assert_stdout_eq_str("1010");
+}
+
+Test(put_nbr_bin2, test_put_nbr_binary2, .init = redirect_all_std2)
+{
+	my_put_nbr_bin(42);
+	cr_assert_stdout_eq_str("101010");
+}
+
+Test(put_nbr_bin3, test_put_nbr_binary3, .init = redirect_all_std2)
+{
+	my_put_nbr_bin(42);
+	cr_assert_stdout_eq_str("101010");
+}
+
+Test(put_nbr_bin4, test_put_nbr_binary4, .init = redirect_all_std2)
+{
+	my_put_nbr_bin(42);
+	cr_assert_stdout_eq_str("101010");
+}
+/*
+** EPITECH PROJECT, 2017
+** tests_add_it
+** File description:
+** tests_add_it
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+void	redirect_all_std1(void)
+{
+	cr_redirect_stdout();
+	cr_redirect_stderr();
+}
+
+Test(put_nbr1, test_put_nbr1, .init = redirect_all_std1)
+{
+	my_put_nbr(42);
+	cr_assert_stdout_eq_str("42");
+}
+
+Test(put_nbr2, test_put_nbr2, .init = redirect_all_std1)
+{
+	my_put_nbr(1);
+	cr_assert_stdout_eq_str("1");
+}
+
+Test(put_nbr3, test_put_nbr3, .init = redirect_all_std1)
+{
+	my_put_nbr(20000);
+	cr_assert_stdout_eq_str("20000");
+}
+
+Test(put_nbr4, test_put_nbr4, .init = redirect_all_std1)
+{
+	my_put_nbr(-12);
+	cr_assert_stdout_eq_str("-12");
+}
+/*
+** EPITECH PROJECT, 2017
+** test
+** File description:
+** nbrhexa
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+void    redirect_all_std3(void)
+{
+	cr_redirect_stdout();
+	cr_redirect_stderr();
+}
+
+Test(put_nbr_hexa2, test_put_nbr_hexa2, .init = redirect_all_std3)
+{
+	my_put_nbr_hexa(42);
+	cr_assert_stdout_eq_str("2a");
+}
+
+Test(put_nbr_hexa3, test_put_nbr_hexa3, .init = redirect_all_std3)
+{
+	my_put_nbr_hexa(42);
+	cr_assert_stdout_eq_str("2a");
+}
+
+Test(put_nbr_hexa4, test_put_nbr_hexa4, .init = redirect_all_std3)
+{
+	my_put_nbr_hexa(123456789);
+	cr_assert_stdout_eq_str("75bcd15");
+}
+
+Test(put_nbr_hexa5, test_put_nbr_hexa5, .init = redirect_all_std3)
+{
+	my_put_nbr_hexa(0);
+	cr_assert_stdout_eq_str("0");
+}
+/*
+** EPITECH PROJECT, 2017
+** hexa
+** File description:
+** m
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+void    redirect_all_std4(void)
+{
+	cr_redirect_stdout();
+	cr_redirect_stderr();
+}
+
+Test(put_nbr_hexam1, test_put_nbr_hexam1, .init = redirect_all_std4)
+{
+	my_put_nbr_hexam(10);
+	cr_assert_stdout_eq_str("A");
+}
+
+Test(put_nbr_hexam2, test_put_nbr_hexam2, .init = redirect_all_std4)
+{
+	my_put_nbr_hexam(42);
+	cr_assert_stdout_eq_str("2A");
+}
+
+Test(put_nbr_hexam3, test_put_nbr_hexam3, .init = redirect_all_std4)
+{
+	my_put_nbr_hexam(123456789);
+	cr_assert_stdout_eq_str("75BCD15");
+}
+
+Test(put_nbr_hexam5, test_put_nbr_hexam5, .init = redirect_all_std4)
+{
+	my_put_nbr_hexam(0);
+	cr_assert_stdout_eq_str("0");
+}
+/*
+** EPITECH PROJECT, 2017
+** put
+** File description:
+** octal
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+void    redirect_all_std6(void)
+{
+	cr_redirect_stdout();
+	cr_redirect_stderr();
+}
+
+Test(put_nbr_octal1, test_put_nbr_octal1, .init = redirect_all_std6)
+{
+	my_put_nbr_octal(1);
+	cr_assert_stdout_eq_str("1");
+}
+
+Test(put_nbr_octal2, test_put_nbr_octal2, .init = redirect_all_std6)
+{
+	my_put_nbr_octal(42);
+	cr_assert_stdout_eq_str("52");
+}
+
+Test(put_nbr_octal3, test_put_nbr_octal3, .init = redirect_all_std6)
+{
+	my_put_nbr_octal(0);
+	cr_assert_stdout_eq_str("0");
+}
+
+Test(put_nbr_octal4, test_put_nbr_octal4, .init = redirect_all_std6)
+{
+	my_put_nbr_octal(123456789);
+	cr_assert_stdout_eq_str("726746425");
+}
+/*
+** EPITECH PROJECT, 2017
+** test
+** File description:
+** pustr
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+void    redirect_all_stds(void)
+{
+	cr_redirect_stdout();
+	cr_redirect_stderr();
+}
+
+Test(putstr1, test_putstr1, .init = redirect_all_stds)
+{
+	my_putstr("bonjour");
+	cr_assert_stdout_eq_str("bonjour");
+}
+
+Test(putstr2, test_putstr2, .init = redirect_all_stds)
+{
+	my_putstr("AUYG34567(--(-uu");
+	cr_assert_stdout_eq_str("AUYG34567(--(-uu");
+}
+
+Test(putstr3, test_putstr3, .init = redirect_all_stds)
+{
+	my_putstr("AZERTYUIOPLKJHGF");
+	cr_assert_stdout_eq_str("AZERTYUIOPLKJHGF");
+}
+/*
+** EPITECH PROJECT, 2017
+** len
+** File description:
+** get
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+Test(nb_len, test_return_nb_len)
+{
+	int     r_value = 0;
+
+	r_value = my_nb_len(42);
+	cr_assert_eq(r_value, 2);
+	r_value = my_nb_len(123456789);
+	cr_assert_eq(r_value, 9);
+	r_value = my_nb_len(1);
+	cr_assert_eq(r_value, 1);
+}
+
+Test(my_strlen, test_return_strlen)
+{
+	int     r_value = 0;
+
+	r_value = my_strlen("bonjour");
+	cr_assert_eq(r_value, 7);
+	r_value = my_strlen("123456789");
+	cr_assert_eq(r_value, 9);
+	r_value = my_strlen("1");
+	cr_assert_eq(r_value, 1);
+}
+
+Test(my_getnbr, test_return_getnbr)
+{
+	int     r_value = 0;
+
+	r_value = my_getnb("42");
+	cr_assert_eq(r_value, 42);
+	r_value = my_getnb("123456789");
+	cr_assert_eq(r_value, 123456789);
+	r_value = my_getnb("1");
+	cr_assert_eq(r_value, 1);
+}
+/*
+** EPITECH PROJECT, 2017
+** test
+** File description:
+** pts
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+Test(putchar, test_putchar_return)
+{
+	int     r_value = 0;
+
+	r_value = my_putchar('1');
+	cr_assert_eq(r_value, 1);
+	r_value = my_putchar('A');
+	cr_assert_eq(r_value, 1);
+	r_value = my_putchar('a');
+	cr_assert_eq(r_value, 1);
+}
+
+Test(putstr, test_putstr_return)
+{
+	int     r_value = 0;
+
+	r_value = my_putstr("bonjour");
+	cr_assert_eq(r_value, 7);
+	r_value = my_putstr("je ne sais pas");
+	cr_assert_eq(r_value, 14);
+	r_value = my_putstr("-phrase");
+	cr_assert_eq(r_value, 7);
+}
+/*
+** EPITECH PROJECT, 2017
+** tests_add_it
+** File description:
+** tests_add_it
+*/
+
+#include <criterion/criterion.h>
+#include <criterion/redirect.h>
+#include "my_printf.h"
+
+Test(put_nbr_bin, test_put_nbr_binary)
+{
+	int	r_value = 0;
+
+	r_value = my_put_nbr_bin(10);
+	cr_assert_eq(r_value, 4);
+	r_value = my_put_nbr_bin(42);
+	cr_assert_eq(r_value, 6);
+}
+
+Test(put_nbr, test_put_nbr_)
+{
+	int	r_value = 0;
+
+	r_value = my_put_nbr(10);
+	cr_assert_eq(r_value, 2);
+	r_value = my_put_nbr(42);
+	cr_assert_eq(r_value, 2);
+}
+
+Test(put_nbr_hexa, test_put_nbr_hexa)
+{
+	int	r_value = 0;
+
+	r_value = my_put_nbr_hexa(10);
+	cr_assert_eq(r_value, 1);
+	r_value = my_put_nbr_hexa(42);
+	cr_assert_eq(r_value, 2);
+}
+
+Test(put_nbr_hexam, test_put_nbr_hexa_cap)
+{
+	int	r_value = 0;
+
+	r_value = my_put_nbr_hexam(10);
+	cr_assert_eq(r_value, 1);
+	r_value = my_put_nbr_hexam(42);
+	cr_assert_eq(r_value, 2);
+}
+
+Test(put_nbr_octal, test_put_nbr_octal)
+{
+	int	r_value = 0;
+
+	r_value = my_put_nbr_octal(10);
+	cr_assert_eq(r_value, 2);
+	r_value = my_put_nbr_octal(42);
+	cr_assert_eq(r_value, 2);
+}
